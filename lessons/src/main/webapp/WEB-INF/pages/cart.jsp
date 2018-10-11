@@ -33,7 +33,7 @@
         </td>
         <td><%=product.getCost().setScale(2, BigDecimal.ROUND_HALF_UP)%>
         </td>
-        <td><a href="#">Remove</a></td>
+        <td><a href="RemoveFromCartServlet?art=<%=product.getArt()%>">Remove</a></td>
     </tr>
     <%} %>
     <tr>

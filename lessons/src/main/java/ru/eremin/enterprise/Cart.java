@@ -28,4 +28,15 @@ public class Cart {
         this.cart.add(product);
         this.amount = this.amount.add(product.getCost());
     }
+
+    public boolean removeProduct(@NonNull String art) {
+        for (Product product : this.cart) {
+            if (product.getArt().equals(art)) {
+                this.cart.remove(product);
+                this.amount = this.amount.subtract(product.getCost());
+                return true;
+            }
+        }
+        return false;
+    }
 }

@@ -1,0 +1,56 @@
+.productContainer {
+    width: 300px;
+    height: 500px;
+    float: left;
+    background-color: #b3b3b3;
+    border: 1px black solid;
+}
+
+.productArt {
+    margin: 10px;
+    background-color: blueviolet;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.productName {
+    margin: 10px;
+    background-color: aquamarine;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.productCost {
+    margin: 10px;
+    background-color: rgb(248, 200, 172);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    word-break: break-all;
+    min-width: 250px;
+    max-width: 350px;
+    border: 1px solid black;
+    vertical-align: middle;
+    text-align: center;
+    font-style: italic;
+}
+
+th {
+    border: 1px solid black;
+    vertical-align: middle;
+    text-align: center;
+}
+
+

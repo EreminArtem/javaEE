@@ -1,6 +1,6 @@
 package ru.eremin.enterprise.servlets;
 
-import ru.eremin.enterprise.Catalog;
+import ru.eremin.enterprise.catalog.CatalogRepository;
 import ru.eremin.enterprise.products.Product;
 
 import javax.inject.Inject;
@@ -16,16 +16,11 @@ import java.math.BigDecimal;
 public class CreateCatalogServlet extends HttpServlet {
 
     @Inject
-    private Catalog catalog;
+    private CatalogRepository catalogRepository;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        for (int i = 0; i < 9; i++) {
-            catalog.addProduct(
-                    new Product(
-                            "Product " + System.currentTimeMillis(),
-                            new BigDecimal(0 + (Math.random() * 100.00))));
-        }
-        resp.sendRedirect("catalog");
+
+        resp.sendRedirect("catalogRepository");
     }
 }

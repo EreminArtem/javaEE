@@ -1,6 +1,6 @@
 package ru.eremin.enterprise.servlets;
 
-import ru.eremin.enterprise.Catalog;
+import ru.eremin.enterprise.catalog.CatalogRepository;
 import ru.eremin.enterprise.Constants;
 import ru.eremin.enterprise.products.Product;
 
@@ -16,18 +16,18 @@ import java.io.IOException;
 public class ProductServlet extends HttpServlet {
 
     @Inject
-    private Catalog catalog;
+    private CatalogRepository catalogRepository;
     private Product product;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         final String art = req.getParameter(Constants.ART);
-        product = catalog.findByArt(art);
-        if (product == null) {
-            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
-            return;
-        }
-        req.setAttribute(Constants.PRODUCT, product);
+//        product = catalogRepository.findByArt(art);
+//        if (product == null) {
+//            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+//            return;
+//        }
+//        req.setAttribute(Constants.PRODUCT, product);
         req.getRequestDispatcher("WEB-INF/pages/product.jsp").forward(req, resp);
     }
 }

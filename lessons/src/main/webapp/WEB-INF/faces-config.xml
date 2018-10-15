@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+        xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+        version="2.1">
+
+    <application>
+        <action-listener>org.primefaces.application.DialogActionListener</action-listener>
+        <navigation-handler>org.primefaces.application.DialogNavigationHandler</navigation-handler>
+        <view-handler>org.primefaces.application.DialogViewHandler</view-handler>
+    </application>
+
+    <navigation-rule>
+        <navigation-case>
+        <from-outcome>adminHome</from-outcome>
+        <to-view-id>/WEB-INF/pages/admin/admin-home.xhtml</to-view-id>
+    </navigation-case>
+        <navigation-case>
+            <from-outcome>orderslist</from-outcome>
+            <to-view-id>/WEB-INF/pages/admin/orders-list.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>categories-list</from-outcome>
+            <to-view-id>/WEB-INF/pages/admin/categories-list.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>empty-page</from-outcome>
+            <to-view-id>/WEB-INF/pages/admin/empty-page.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>tableView</managed-bean-name>
+        <managed-bean-class>ru.eremin.enterprise.view.TableView</managed-bean-class>
+        <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>catalogRepository</managed-bean-name>
+        <managed-bean-class>ru.eremin.enterprise.catalog.CatalogRepository</managed-bean-class>
+        <managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
+</faces-config>

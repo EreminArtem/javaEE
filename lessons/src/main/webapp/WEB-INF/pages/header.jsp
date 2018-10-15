@@ -12,5 +12,6 @@
     <li><a href="main">Main</a></li>
     <li><a href="createCatalog">Catalog</a></li>
     <li><a href="cart">Cart</a></li>
+    <li><a href="adminHome">Administration</a></li>
 </ul>
 <hr>

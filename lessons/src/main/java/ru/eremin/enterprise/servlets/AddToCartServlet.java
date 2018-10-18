@@ -1,7 +1,7 @@
 package ru.eremin.enterprise.servlets;
 
 import ru.eremin.enterprise.Cart;
-import ru.eremin.enterprise.Catalog;
+import ru.eremin.enterprise.catalog.CatalogRepository;
 import ru.eremin.enterprise.Constants;
 import ru.eremin.enterprise.products.Product;
 
@@ -20,18 +20,18 @@ public class AddToCartServlet extends HttpServlet {
     private Cart cart;
 
     @Inject
-    private Catalog catalog;
-    private Product product;
+    private CatalogRepository catalogRepository;
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        final String art = req.getParameter(Constants.ART);
-        product = catalog.findByArt(art);
-        if (product == null) {
-            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
-            return;
-        }
-        cart.addProduct(product);
-        resp.sendRedirect("catalog");
+//        final String art = req.getParameter(Constants.ART);
+//        Product product = catalogRepository.findByArt(art);
+//        if (product == null) {
+//            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+//            return;
+//        }
+//        cart.addProduct(product);
+        resp.sendRedirect("catalogRepository");
     }
 }

@@ -9,7 +9,7 @@
 <f:view>
     <h1>Categories</h1>
     <h:form>
-        <p:dataTable var="category" value="#{tableView.categories}" editable="true">
+        <p:dataTable var="category" value="#{tableView.getCategories()}" editable="true">
             <p:ajax event="rowEdit" update="content"/>
             <p:ajax event="rowEditCancel" update="content"/>
             <p:column headerText="Id">

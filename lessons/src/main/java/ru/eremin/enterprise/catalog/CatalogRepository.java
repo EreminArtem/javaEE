@@ -1,6 +1,7 @@
 package ru.eremin.enterprise.catalog;
 
 import lombok.NonNull;
+import ru.eremin.enterprise.enity.Category;
 
 import javax.ejb.Stateless;
 import javax.faces.bean.ManagedBean;

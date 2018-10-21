@@ -1,11 +1,9 @@
 package ru.eremin.enterprise.view;
 
 import ru.eremin.enterprise.catalog.CatalogRepository;
-import ru.eremin.enterprise.catalog.Category;
+import ru.eremin.enterprise.enity.Category;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 import java.io.Serializable;

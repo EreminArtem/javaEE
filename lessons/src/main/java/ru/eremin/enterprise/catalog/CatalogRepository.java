@@ -2,15 +2,17 @@ package ru.eremin.enterprise.catalog;
 
 import lombok.NonNull;
 import ru.eremin.enterprise.enity.Category;
+import ru.eremin.enterprise.interceptors.LogInterceptor;
 
 import javax.ejb.Stateless;
 import javax.faces.bean.ManagedBean;
+import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.*;
 
-
 @Stateless
+@Interceptors({LogInterceptor.class})
 @ManagedBean(name = "catalogRepository")
 public class CatalogRepository {
 

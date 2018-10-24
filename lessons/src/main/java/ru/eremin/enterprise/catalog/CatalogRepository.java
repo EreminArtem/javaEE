@@ -40,6 +40,6 @@ public class CatalogRepository {
     public void update(@NonNull final String id, @NonNull final String newName) {
         Category category = em.find(Category.class, id);
         category.setName(newName);
-        em.refresh(category);
+        em.merge(category);
     }
 }

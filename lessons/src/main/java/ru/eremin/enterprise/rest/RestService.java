@@ -47,7 +47,7 @@ public class RestService {
     @Path("/addNew")
     @WebMethod
     @Consumes("text/plain")
-    public void addNew(@QueryParam("name") String name) {
+    public void addNew(@QueryParam("name") final String name) {
         repository.addCategory(name);
     }
 
@@ -55,7 +55,7 @@ public class RestService {
     @Path("/update")
     @WebMethod
     @Consumes("text/plain")
-    public void update(@QueryParam("id") String id, @QueryParam("newName") String newName) {
+    public void update(@QueryParam("id") final String id, @QueryParam("newName") final String newName) {
         repository.update(id, newName);
     }
 
@@ -63,7 +63,7 @@ public class RestService {
     @Path("/delete")
     @WebMethod
     @Consumes("text/plain")
-    public void delete(@QueryParam("id") String id) {
+    public void delete(@QueryParam("id") final String id) {
         repository.deleteCategoryById(id);
     }
 }

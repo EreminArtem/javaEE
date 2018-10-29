@@ -17,6 +17,11 @@
         <to-view-id>/WEB-INF/pages/admin/admin-home.xhtml</to-view-id>
     </navigation-case>
         <navigation-case>
+            <from-outcome>auth-page</from-outcome>
+            <to-view-id>/WEB-INF/pages/admin/auth-page.xhtml</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
             <from-outcome>orderslist</from-outcome>
             <to-view-id>/WEB-INF/pages/admin/orders-list.xhtml</to-view-id>
         </navigation-case>

@@ -25,8 +25,8 @@ public class RestService {
     @WebMethod
     @Produces(MediaType.APPLICATION_JSON)
     public List<CategoryDTO> getAll() {
-        List<CategoryDTO> resultList = new ArrayList<>();
-        List<Category> categoryList = repository.findAll();
+        final List<CategoryDTO> resultList = new ArrayList<>();
+        final List<Category> categoryList = repository.findAll();
         for (Category category : categoryList) {
             resultList.add(new CategoryDTO(category.getId(), category.getName()));
         }
@@ -39,7 +39,7 @@ public class RestService {
     @Consumes("text/plain")
     @Produces(MediaType.APPLICATION_JSON)
     public CategoryDTO getById(@QueryParam("id") final String id) {
-        Category category = repository.findCategoryById(id);
+        final Category category = repository.findCategoryById(id);
         return new CategoryDTO(category.getId(), category.getName());
     }
 

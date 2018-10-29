@@ -23,8 +23,8 @@ public class CatalogRepository {
         return em.createQuery("SELECT e FROM Category e", Category.class).getResultList();
     }
 
-    public void addCategory(String name) {
-        Category category = new Category(name);
+    public void addCategory(final String name) {
+        final Category category = new Category(name);
         em.persist(category);
     }
 
@@ -33,13 +33,13 @@ public class CatalogRepository {
     }
 
     public void deleteCategoryById(@NonNull final String id) {
-        Category category = em.find(Category.class, id);
+        final Category category = em.find(Category.class, id);
         em.remove(category);
     }
 
     public void update(@NonNull final String id, @NonNull final String newName) {
-        Category category = em.find(Category.class, id);
+        final Category category = em.find(Category.class, id);
         category.setName(newName);
-        em.refresh(category);
+        em.merge(category);
     }
 }
